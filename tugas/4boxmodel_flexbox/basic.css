@@ -1,0 +1,57 @@
+.kontainer > div
+{
+    display: flex;
+    align-items: center;
+}
+html,body
+{ 
+    background-image: url(background-5-web.jpg);
+	background-size: cover;
+    background-attachment: fixed;
+}
+/*
+.kontainer > div:nth-child(1n)
+{
+    background-color: #96ceb4;
+}
+.kontainer > div:nth-child(2n)
+{
+    background-color: #88d8b0;
+}
+.kontainer > div:nth-child(3n)
+{
+    background: #ffbf69;
+}
+.kontainer > div:nth-child(4n)
+{
+    background-color: #ffcc5c;
+}
+*/
+.navigasi> a:nth-child(1n)
+{
+    background-color:red;
+}
+.navigasi > a:nth-child(2n)
+{
+    background-color: yellow;
+}
+.navigasi > a:nth-child(3n)
+{
+    background-color:green;
+}
+.navigasi > a:nth-child(4n)
+{
+    background-color:blue;
+}
+.navigasi > a:nth-child(5n)
+{
+    background-color:white;
+}
+.navigasi > a:nth-child(6n)
+{
+    background-color: red;
+}
+.navigasi > a:nth-child(7n)
+{
+    background-color:yellow;
+}

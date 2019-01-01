@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fahmi website</title>
+		<style>
+			.latar
+			{
+				background-image: url(Wood-Wallpapers-2.jpg);
+				background-size: cover;
+				background-attachment: fixed;
+			}
+			.logo
+			{
+				width: 100%;
+				height: auto;
+				text-align: center;
+				color: #fff;
+			}
+			.navigasi 
+			{
+				width: 100%;
+				height: auto;
+				background-color: #FFFFFF
+			}
+			.footer 
+			{
+				text-align: center;
+			}
+			.konten 
+			{
+				width: 100%;
+			}
+			*{
+			 padding:0;
+			 margin:0;
+			}
+			img {
+			 max-width: 100%;
+			 height: auto;
+			}
+			ul,ol {
+			 list-style-type: none;
+			}
+			/* end css reset */
+
+			.container { /* posisikan letak slidernya */
+			 margin:10% auto;
+			 position: relative;
+			 overflow: hidden;
+			}
+			.container, ul.slide li img{
+			 width:500px; /* Sesuaikan sendiri */
+			 height: 300px;  /* Sesuaikan sendiri */
+			}
+
+
+			ul.slide {
+			 position: absolute;
+			 display: block;
+			 width:300%;  /* <-- Angka 3 Bergantung pada jumlah slide */
+			}
+
+			.caption { /* styling untuk deskripsi setiap slide */
+			 position: absolute;
+			 background-color: rgba(0,0,0,0.5);
+			 bottom:0;
+			 padding:10px;
+			 color:#fff;
+			 left: 0;
+			 right: 0;
+			}
+
+			/* Yang membuatnya jadi slider */
+			 ul.slide li {
+			    display: inline-block;
+			    float: left;
+			    -webkit-box-sizing:border-box;
+			    -moz-box-sizing:border-box;
+			    ox-sizing:border-box;
+			    -webkit-transition: -webkit-transform 2000ms;
+			    -moz-transition: -moz-transform 2000ms;
+			    transition: -webkit-transform 2000ms, transform 2000ms;
+			 }
+			 ul.slide li.slide-1 {
+			  left: 0%;
+			 }
+			 ul.slide li.slide-2 {
+			  left: 100%;
+			 }
+			 ul.slide li.slide-3 {
+			  left: 200%;
+			 }
+			 #nav-1:checked ~ ul.slide li{
+			   -webkit-transform: translateX(0%);
+			  -moz-transform: translateX(0%);
+			   transform: translateX(0%);
+			 }
+			 #nav-2:checked ~ ul.slide li{
+			   -webkit-transform: translateX(-100%);
+			   -moz-transform: translateX(-100%);
+			  transform: translateX(-100%);
+			 }
+			 #nav-3:checked ~ ul.slide li {
+			   -webkit-transform: translateX(-200%);
+			   -moz-transform: translateX(-200%);
+			   transform: translateX(-200%);
+			 }
+			/* End, yang membuatnya jadi slider */
+
+
+			/* Navigator */
+
+			.radio-nav { /* menghilangkan radio button */
+			 display: none;
+			}
+			 
+			 /* styling untuk tombol next dan previous slide */
+			 .nav-arrow {
+			  position: absolute;
+			  top:45%;
+			  width:50px;
+			  height: 50px;
+			 }
+			 .nav-next {
+			  right:10px;
+			 }
+			 .nav-prev {
+			  left:10px;
+			 }
+			 .nav-arrow label {
+			  -webkit-transition:all 0.3s;
+			  -moz-transition:all 0.3s;
+			  transition:all 0.3s;
+			  background-color: rgba(0,0,0,0.3);
+			  color: #fff;
+			  border-radius: 50%;
+			  display: block;
+			  position: absolute;
+			  padding:15px 20px;
+			  cursor: pointer;
+			  z-index: 1;
+			  opacity: 0;
+			  font-weight: bold;
+			  line-height: 1;
+			 }
+			 .container:hover .nav-arrow label{
+			  background-color: rgba(0,0,0,0.7);
+			 }
+			 /* end styling untuk tombol next dan previous slide */
+			 /*Setiap slide mempunya tombol prev dan next-nya masing-masing. Nah, tampilkan tombol yang tepat dengan kode dibawah ini*/ 
+			 #nav-1:checked ~ .nav-prev label.nav-3,
+			 #nav-1:checked ~ .nav-next label.nav-2,
+			 #nav-2:checked ~ .nav-prev label.nav-1,
+			 #nav-2:checked ~ .nav-next label.nav-3,
+			 #nav-3:checked ~ .nav-prev label.nav-2,
+			 #nav-3:checked ~ .nav-next label.nav-1 {
+			  z-index: 2;
+			  opacity: 1;
+			 }
+			 /* end */
+
+			/* Navigator */
+		</style>
+
+	</head>
+	<body class="latar">
+		<center>
+		<table>
+			<!--header-->
+			<tr class="logo">
+				<td colspan="2" height="120px">
+					<font face="Edwardian Script ITC"; size="5">
+					<a style="color: white" href="index.html"><h1>Fahmi website</h1></a>
+				</font>
+				</td>
+			</tr>
+			<!--navigation-->
+			<tr class="navigasi">
+				<td colspan="2" height="30px">
+					<nav>
+ 						<a href="index.html">Halaman Utama</a> |
+ 						<a href="artikel.html">Artikel</a> |
+ 						<a href="profil.html">Profil</a> |
+					</nav>
+				</td>
+			</tr>
+			<!--content-->
+			<tr class="konten">
+				<td height="400px" width="920px">
+					<div class="container">
+						<input type="radio" name="slide" class="radio-nav" id="nav-1" checked/>
+						<input type="radio" name="slide" class="radio-nav" id="nav-2"/>
+						<input type="radio" name="slide" class="radio-nav" id="nav-3"/>
+						<ul class="slide">
+					  		<li class="slide-1">
+					   			<img src="1.jpg"/>
+					  		</li>
+					  		<li class="slide-2">
+					   			<img src="menara.jpg"/>
+					  		</li>
+					  		<li class="slide-3">
+					  			<img src="3.jpg"/>
+							</li>
+					 	</ul>
+
+					 	<div class="nav-arrow nav-next">
+					  		<label class="nav-1" for="nav-1">></label>
+					  		<label class="nav-2" for="nav-2">></label>
+					  		<label class="nav-3" for="nav-3">></label>
+					 	</div>
+					 	<div class="nav-arrow nav-prev">
+					  		<label class="nav-1" for="nav-1"><</label>
+					 		<label class="nav-2" for="nav-2"><</label>
+					  		<label class="nav-3" for="nav-3"><</label>
+					 		</div>
+					</div>
+					<article>
+						<header>
+							<h2>
+								<a href="airtigarasa.html"><img src="airtigarasa.jpg" width="10%" height="80"></a><br>
+								<a style="color: black" href="airtigarasa.html">Air tiga rasa dari gunung muria</a>
+							</h2>
+							<p>Pemandangan yang menarik memang menjadi salah satu daya tarik para wisatawan berkunjung ke tempat wisata Gunung Muria. Tak hanya itu, keberadaan Sunan Muria sebagai penyebar Islam di daerah tersebut telah menjadikan daerah yang terletak di perbatasan Kabupaten Kudus, Jepara dan Pati itu mempunyai banyak kisah dan peninggalan <a href="airtigarasa.html">more...</a></p>
+						</header>
+					</article>
+					<article>
+						<header>
+							<h2>
+								<a href="menara.html"><img src="menara.jpg" width="10%" height="80"></a><br>
+								<a style="color: black" href="menara.html">Menara Kudus peninggalan Sunan Kudus</a>
+							</h2>
+							<p>Penyebaran agama Islam di Jawa dilakukan oleh para pedagang, yang dipelopori oleh Maulana Maghribi, yang lebih dikenal dengan nama Maulana Malik Ibrahim. Beliau menyebarkan Islam tidak hanya sendiri, melainkan bersama-sama dengan yang lain atau biasa disebut dengan Wali Songo. Wali-wali tersebut menyampaikan risalah Islam  <a href="menara.html">more...</a></p>
+						</header>
+					</article>
+					<article>
+						<header>
+							<h2>
+								<a href="montel.html"><img src="montel.jpg" width="10%" height="80"></a><br>
+								<a style="color: black" href="montel.html">Keindahan air terjun montel gunung muria</a>
+							</h2>
+							<p>Air terjun merupakan sebagai salah satu pesona alam yang secara alami terbentuk. Bisa kita lihat di negeri kita sendiri banyak sekali air terjun. salah satunya yaitu air terjun yang ada di Kudus yaitu Air Terjun Montel. Air terjun yang keberadaannya di keliling oleh pepohonan tersebut tentu <a href="montel.html">more...</a></p>
+						</header>
+					</article>
+				</td>
+				
+			</tr>
+			<!--footer-->
+			<tr class="footer">
+				<td colspan="2">
+					<small>&copy; Copyright - fahmiwebsite.com 2017 | Alright reserved.</small>
+				</td>
+			</tr>
+		</table>
+		</center>
+	</body>
+</html>
